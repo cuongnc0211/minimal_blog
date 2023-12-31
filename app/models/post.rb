@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   STATUSES = ["draft", "published", "archived"]
 
   has_rich_text :content
+  has_one_attached :cover_image
 
   enum status: STATUSES.zip(STATUSES).to_h
 

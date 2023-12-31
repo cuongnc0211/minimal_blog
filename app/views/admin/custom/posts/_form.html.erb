@@ -18,6 +18,11 @@
           </div>
 
           <div class='mb-3'>
+            <%= f.label :cover_image %>
+            <%= f.file_field :cover_image %>
+          </div>
+
+          <div class='mb-3'>
             <%= f.text_field :is_priority, class: 'w-full rounded-lg border-gray-200 p-3 text-sm', placeholder: 'Is_priority' %>
           </div>
 
