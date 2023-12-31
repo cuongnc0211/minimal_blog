@@ -12,7 +12,7 @@ class Admin::Custom::PostsController < Admin::BaseController
 
     if @post.save
       flash[:success] = "Post created successfully"
-      redirect_to admin_post_path(post)
+      redirect_to admin_post_path(@post)
     else
       flash.now[:error] = "Post could not be created"
       render :new
@@ -24,7 +24,7 @@ class Admin::Custom::PostsController < Admin::BaseController
 
     if @post.update(post_params)
       flash[:success] = "Post updated successfully"
-      redirect_to admin_post_path(post)
+      redirect_to admin_post_path(@post)
     else
       flash.now[:error] = "Post could not be updated"
       render :edit

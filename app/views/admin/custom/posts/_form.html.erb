@@ -1,0 +1,35 @@
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div class="rounded-lg bg-white lg:col-span-5 lg:p-12">
+
+        <%= form_for [:admin, :custom, @post] do |f| %>
+          <div class='mb-3'>
+            <%= f.text_field :title, class: 'w-full rounded-lg border-gray-200 p-3 text-sm', placeholder: 'Title' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.text_field :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm', placeholder: 'Sescription' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.select :status, options_for_select(Post.statuses.keys.map { |status| [status.titleize, status] }, @post.status),
+              {},
+              { class: 'rounded-lg border-gray-200 p-3 text-sm' } %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.text_field :is_priority, class: 'w-full rounded-lg border-gray-200 p-3 text-sm', placeholder: 'Is_priority' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.rich_text_area :content, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.submit 'Submit' %>
+          </div>
+
+         <% end %>
+      </div>
+    </div>
+  </div>
