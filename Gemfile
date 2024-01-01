@@ -80,3 +80,5 @@ gem "sassc-rails"
 
 gem 'active_skin'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+
+gem 'pagy'

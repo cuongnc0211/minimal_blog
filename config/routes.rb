@@ -16,4 +16,6 @@ Rails.application.routes.draw do
       resources :posts
     end
   end
+
+  resources :posts, only: [:index, :show]
 end

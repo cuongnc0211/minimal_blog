@@ -1,0 +1,17 @@
+<article class="group">
+  <img
+    alt="Lava"
+    src="<%= post.cover_link %>"
+    class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
+  />
+
+  <div class="p-4">
+    <a href="<%= post_path(post) %>">
+      <h3 class="text-lg font-medium text-gray-900"><%= post.title %></h3>
+    </a>
+
+    <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+      <%== post.description %>
+    </p>
+  </div>
+</article>
