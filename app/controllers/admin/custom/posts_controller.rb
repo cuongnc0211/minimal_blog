@@ -1,6 +1,6 @@
 class Admin::Custom::PostsController < Admin::BaseController
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::Custom::PostsController < Admin::BaseController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 
     if @post.update(post_params)
       flash[:success] = "Post updated successfully"

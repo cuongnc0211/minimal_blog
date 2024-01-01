@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.published.friendly.find(params[:id])
   end
 end

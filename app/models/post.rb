@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   STATUSES = ["draft", "published", "archived"]
 
   has_rich_text :content

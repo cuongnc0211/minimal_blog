@@ -29,6 +29,10 @@ ActiveAdmin.register Post do
   end
 
   controller do
+    def find_resource
+      Post.friendly.find(params[:id])
+    end
+
     def new
       redirect_to new_admin_custom_post_path
     end
