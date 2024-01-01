@@ -82,3 +82,5 @@ gem 'active_skin'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 gem 'pagy'
+
+gem 'image_processing', '~> 1.2'
