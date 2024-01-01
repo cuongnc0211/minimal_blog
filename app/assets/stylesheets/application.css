@@ -15,8 +15,9 @@
  */
 
 .root-body{
+  /* font-family: 'Nunito', sans-serif; */
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.42857143;
   color: #333;
