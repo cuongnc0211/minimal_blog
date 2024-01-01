@@ -1,3 +1,7 @@
+<% content_for :banner do %>
+  <%= render partial: 'layouts/banner' %>
+<% end %>
+
 <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
   <div class='block'>
     <%= render partial: 'posts/post', collection: @posts, as: :post %>
