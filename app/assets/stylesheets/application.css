@@ -11,13 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require actiontext
  *= require_tree .
  */
 
 .root-body{
-  /* font-family: 'Nunito', sans-serif; */
-  /* font-family: 'Roboto', sans-serif; */
   font-size: 20px;
   font-weight: 400;
   line-height: 1.42857143;
