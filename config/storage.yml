@@ -3,8 +3,8 @@ test:
   root: <%= Rails.root.join("tmp/storage") %>
 
 local:
-  service: amazon
-  # root: <%= Rails.root.join("storage") %>
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
 
 production:
   service: amazon
