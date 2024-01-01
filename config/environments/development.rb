@@ -33,8 +33,13 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.assets.compile = true
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  # config.after_initialize do
+  #   ActiveStorage::Current.url_options = { host: 'localhost', port: 3000, protocol: 'http' }
+  # end
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -60,7 +65,7 @@ Rails.application.configure do
   config.active_job.verbose_enqueue_logs = true
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.quiet = false
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
