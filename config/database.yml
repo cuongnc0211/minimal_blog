@@ -84,4 +84,4 @@ production:
   database: minimal_blog_production
   username: <%= ENV["MINIMAL_BLOG_DATABASE_USERNAME"] %>
   password: <%= ENV["MINIMAL_BLOG_DATABASE_PASSWORD"] %>
-  host: 'cuongrds.cn8gg28mg9cb.us-west-2.rds.amazonaws.com'
+  host: <%= ENV["DATABASE_HOST"] %>
