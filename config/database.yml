@@ -79,13 +79,7 @@ test:
 #
 production:
   <<: *default
-  # postgresql://postgres:Javier234@cuongrds.cn8gg28mg9cb.us-west-2.rds.amazonaws.com:5432/minimal-blog?sslrootcert=config/amazon-rds-ca-cert.pem&sslmode=require
-  # postgresql://postgres:Javier234@cuongrds.cn8gg28mg9cb.us-west-2.rds.amazonaws.com:5432/minimal_blog_production
-
-  # url: <%= ENV['DATABASE_URL'] %>
-  # database: minimal_blog_production
-  # username: <%= ENV["MINIMAL_BLOG_DATABASE_USERNAME"] %>
-  # password: <%= ENV["MINIMAL_BLOG_DATABASE_PASSWORD"] %>
+  # postgresql://username:password@rds_end_point:5432/database_name
 
   database: minimal_blog_production
   username: <%= ENV["MINIMAL_BLOG_DATABASE_USERNAME"] %>
