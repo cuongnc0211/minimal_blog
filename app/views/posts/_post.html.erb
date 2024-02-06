@@ -1,19 +1,18 @@
-<div class='rounded-lg'>
-  <article class="group">
-    <img
-      alt="Lava"
-      src="<%= post.cover_link %>"
-      class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
-    />
-
-    <div class="p-4">
-      <a href="<%= post_path(post) %>">
-        <h3 class="text-lg font-medium text-gray-900"><%= post.title %></h3>
-      </a>
-
-      <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-        <%== post.description %>
-      </p>
+<div class="col-md-6 col-xl-4 mb-5">
+  <a class="card post-preview lift h-100" href="<%= post_path(post) %>">
+    <img class="card-img-top" src="<%= post.cover_link %>" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text">Expose the truth, problem-solvers impact mobilized green spaces.<%# post.sub_title %></p>
     </div>
-  </article>
+    <div class="card-footer">
+      <div class="post-preview-meta">
+        <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-2.png" />
+        <div class="post-preview-meta-details">
+          <div class="post-preview-meta-details-name">Aariz Fischer</div>
+          <div class="post-preview-meta-details-date"><%= post.created_at.strftime('%d/%m/%Y %H:%M') %> | 5 min read</div>
+        </div>
+      </div>
+    </div>
+  </a>
 </div>
