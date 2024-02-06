@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   STATUSES = ["draft", "published", "archived"]
+  AVG_WORDS_READING_PER_MIN = 238.0
 
   has_rich_text :content
   has_one_attached :cover_image
@@ -16,6 +17,12 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :content, presence: true
+
+  def estimated_reading_time
+    words_count = content.to_plain_text.split.size
+
+    (words_count / AVG_WORDS_READING_PER_MIN.to_f).ceil
+  end
 
   def self.ransackable_attributes(auth_object = nil)
     ["content", "created_at", "description", "id", "id_value", "is_priority", "status", "title", "updated_at"]

@@ -26,14 +26,14 @@
           <div class="card-body">
             <div class="py-5">
               <h5 class="card-title"><%= @highlighted_posts&.title %></h5>
-              <p class="card-text">Empower communities and energize engaging ideas; scale and impact do-gooders while disruptring industries. Venture philanthropy benefits corporations and people by moving the needle.</p>
+              <p class="card-text"><%= @highlighted_posts&.description %></p>
             </div>
             <hr />
             <div class="post-preview-meta">
               <img class="post-preview-meta-img" src="<%= default_author_avatar %>" />
               <div class="post-preview-meta-details">
                 <div class="post-preview-meta-details-name"><%= default_author %></div>
-                <div class="post-preview-meta-details-date"><%= @highlighted_posts&.created_at&.strftime('%d/%m/%Y') %> &middot; 6 min read</div>
+                <div class="post-preview-meta-details-date"><%= @highlighted_posts&.created_at&.strftime('%d/%m/%Y') %> &middot; <%= est_read_time(@highlighted_posts) %></div>
               </div>
             </div>
           </div>
