@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
     @highlighted_posts = Post.published.priority.newest.first.presence || Post.published.newest.first
 
-    @pagy, @posts = pagy(Post.published.except_post(@highlighted_posts))
+    @pagy, @posts = pagy(Post.published, items: 1)
+    # @pagy, @posts = pagy(Post.published.except_post(@highlighted_posts), items: 1)
   end
 
   def show

@@ -42,25 +42,20 @@
     </a>
 
     <!-- Posts list -->
-    <div class="row gx-5">
-      <%= render partial: 'post', collection: @posts, as: :post %>
-    </div>
+    <%= turbo_frame_tag 'post_list' do %>
+      <div class="row gx-5">
+        <%= render partial: 'post', collection: @posts, as: :post %>
+      </div>
 
-    <nav aria-label="Page navigation example">
-      <ul class="pagination pagination-blog justify-content-center">
-        <li class="page-item disabled">
-          <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-        <li class="page-item"><a class="page-link" href="#!">2</a></li>
-        <li class="page-item"><a class="page-link" href="#!">3</a></li>
-        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-        <li class="page-item"><a class="page-link" href="#!">12</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
-        </li>
-      </ul>
-    </nav>
+      <div class='row'>
+        <div class='col-8 offset-2 col-md-2 offset-md-5'>
+          <%# pagy_bootstrap_nav(@pagy) %>
+          <%= render 'layouts/pagination', pagy: @pagy %>
+        </div>
+      </div>
+    <% end %>
+
+
   </div>
 
   <div class="svg-border-rounded text-dark">
