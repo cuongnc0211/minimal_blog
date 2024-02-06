@@ -9,6 +9,14 @@ class Post < ApplicationRecord
 
   enum status: STATUSES.zip(STATUSES).to_h
 
+  scope :priority, -> { where(is_priority: true) }
+  scope :newest, -> { order(created_at: :desc) }
+  scope :except_post, ->(post) { where.not(id: post.id) }
+
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :content, presence: true
+
   def self.ransackable_attributes(auth_object = nil)
     ["content", "created_at", "description", "id", "id_value", "is_priority", "status", "title", "updated_at"]
   end

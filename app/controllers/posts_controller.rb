@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @pagy, @posts = pagy(Post.published)
+    @highlighted_posts = Post.published.priority.newest.first.presence || Post.published.newest.first
+
+    @pagy, @posts = pagy(Post.published.except_post(@highlighted_posts))
   end
 
   def show
