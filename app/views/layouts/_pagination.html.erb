@@ -1,39 +1,41 @@
-<nav aria-label="Page navigation example">
-  <ul class="pagination pagination-blog justify-content-center">
-    <li class="page-item <%= 'disabled' if pagy.prev.nil? %>">
-      <a class="page-link" href="<%= url_for(request.parameters.merge({ page: 1 })) %>" aria-label="First"><span aria-hidden="true">First</span></a>
-    </li>
-
-    <% if pagy.page - 2 > 0 %>
-      <li class="page-item">
-        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page - 2 })) %>"><%= pagy.page - 2 %></a>
+<% if pagy.present? %>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-blog justify-content-center">
+      <li class="page-item <%= 'disabled' if pagy.prev.nil? %>">
+        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: 1 })) %>" aria-label="First"><span aria-hidden="true">First</span></a>
       </li>
-    <% end %>
 
-    <% if pagy.prev.present? %>
-      <li class="page-item">
-        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.prev })) %>"><%= pagy.prev %></a>
+      <% if pagy.page - 2 > 0 %>
+        <li class="page-item">
+          <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page - 2 })) %>"><%= pagy.page - 2 %></a>
+        </li>
+      <% end %>
+
+      <% if pagy.prev.present? %>
+        <li class="page-item">
+          <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.prev })) %>"><%= pagy.prev %></a>
+        </li>
+      <% end %>
+
+      <li class="page-item <%= 'active' %>">
+        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page })) %>"><%= pagy.page %></a>
       </li>
-    <% end %>
 
-    <li class="page-item <%= 'active' %>">
-      <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page })) %>"><%= pagy.page %></a>
-    </li>
+      <% if pagy.next.present? %>
+        <li class="page-item">
+          <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.next })) %>"><%= pagy.next %></a>
+        </li>
+      <% end %>
 
-    <% if pagy.next.present? %>
-      <li class="page-item">
-        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.next })) %>"><%= pagy.next %></a>
+      <% if pagy.page + 2 <= pagy.last %>
+        <li class="page-item">
+          <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page + 2 })) %>"><%= pagy.page + 2 %></a>
+        </li>
+      <% end %>
+
+      <li class="page-item <%= 'disabled' if pagy.next.nil? %>">
+        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.last })) %>" aria-label="First"><span aria-hidden="true">Last</span></a>
       </li>
-    <% end %>
-
-    <% if pagy.page + 2 <= pagy.last %>
-      <li class="page-item">
-        <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.page + 2 })) %>"><%= pagy.page + 2 %></a>
-      </li>
-    <% end %>
-
-    <li class="page-item <%= 'disabled' if pagy.next.nil? %>">
-      <a class="page-link" href="<%= url_for(request.parameters.merge({ page: pagy.last })) %>" aria-label="First"><span aria-hidden="true">Last</span></a>
-    </li>
-  </ul>
-</nav>
+    </ul>
+  </nav>
+<% end %>
