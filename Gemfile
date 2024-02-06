@@ -90,3 +90,5 @@ gem 'pagy'
 gem 'aws-sdk-s3', require: false
 
 gem 'friendly_id', '~> 5.4.0'
+
+gem "font-awesome-sass", "~> 6.5.1"

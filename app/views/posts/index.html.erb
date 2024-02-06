@@ -19,7 +19,7 @@
 <section class="bg-light py-10">
   <div class="container px-5">
     <!-- Highlight Post-->
-    <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="#!">
+    <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="<%= post_path(@highlighted_posts) if @highlighted_posts %>">
       <div class="row g-0">
         <div class="col-lg-5"><div class="post-preview-featured-img" style="background-image: url('<%= @highlighted_posts&.cover_link %>')"></div></div>
         <div class="col-lg-7">

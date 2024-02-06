@@ -1,17 +1,35 @@
-<section
-  class="overflow-hidden bg-[url(<%= @post.cover_link %>)] bg-cover bg-top bg-no-repeat"
->
-  <div class="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
-    <div class="text-center ltr:sm:text-left rtl:sm:text-right">
-      <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl"><%= @post.title %></h2>
+<section class="bg-light p-3 p-md-5">
+  <div class="container">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-10 col-xl-8 p-3 p-md-5 post-detail">
+        <div class="single-post">
+          <h1><%= @post.title %></h1>
+          <p class="lead"><%= @post.description %></p>
 
-      <p class="hidden max-w-lg text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
-        <%= @post.description %>
-      </p>
+          <div class="d-flex align-items-center justify-content-between mb-5">
+            <div class="single-post-meta me-4">
+              <img class="single-post-meta-img" src="<%= default_author_avatar %>" />
+              <div class="single-post-meta-details">
+                <div class="single-post-meta-details-name"><%= default_author %></div>
+                <div class="single-post-meta-details-date"><%= @post.created_at.strftime('%d/%m/%Y') %> &middot; <%= est_read_time(@post) %></div>
+              </div>
+            </div>
+            <div class="single-post-meta-links">
+              <a href="#!"><i class="fab fa-twitter fa-fw"></i></a>
+              <a href="#!"><i class="fab fa-facebook-f fa-fw"></i></a>
+              <a href="#!"><i class="fas fa-bookmark fa-fw"></i></a>
+            </div>
+          </div>
+          <img class="img-fluid mb-2 rounded" src="<%= @post.cover_link %>" />
+          <div class="small text-gray-500 text-center"><%=  %></div>
+
+          <div class="single-post-text my-5">
+            <%== @post.content %>
+
+            <div class="text-center"><a class="btn btn-transparent-dark" href="<%= posts_path %>">Back to Blog overview</a></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<section class='mt-5'>
-  <%== @post.content %>
-</section>
+</div>
