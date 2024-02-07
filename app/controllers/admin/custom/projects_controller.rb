@@ -1,6 +1,6 @@
 class Admin::Custom::ProjectsController < Admin::BaseController
   def edit
-    @project = Project.friendly.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::Custom::ProjectsController < Admin::BaseController
   end
 
   def update
-    @project = Project.friendly.find(params[:id])
+    @project = Project.find(params[:id])
 
     if @project.update(project_params)
       flash[:success] = "Project updated successfully"
@@ -34,6 +34,6 @@ class Admin::Custom::ProjectsController < Admin::BaseController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :start_date, :end_date, :team_size, :position, :url, :project_type)
+    params.require(:project).permit(:title, :description, :start_date, :end_date, :team_size, :position, :url, :project_type, :cover_image)
   end
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Project do
-  permit_params :title, :description, :start_date, :end_date, :team_size, :position, :url, :project_type
+  permit_params :title, :description, :start_date, :end_date, :team_size, :position, :url, :project_type, :cover_image
 
   index do
     selectable_column
