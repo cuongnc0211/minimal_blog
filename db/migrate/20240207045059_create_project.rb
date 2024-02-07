@@ -9,6 +9,7 @@ class CreateProject < ActiveRecord::Migration[7.1]
       t.text :description
 
       t.string :project_type
+      t.string :url
 
       t.timestamps
     end

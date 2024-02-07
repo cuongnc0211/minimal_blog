@@ -109,6 +109,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_045059) do
     t.string "prosition"
     t.text "description"
     t.string "project_type"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
