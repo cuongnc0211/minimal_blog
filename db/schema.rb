@@ -106,7 +106,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_045059) do
     t.date "start_date"
     t.date "end_date"
     t.integer "team_size"
-    t.string "prosition"
+    t.string "position"
     t.text "description"
     t.string "project_type"
     t.string "url"

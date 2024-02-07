@@ -5,7 +5,7 @@ class CreateProject < ActiveRecord::Migration[7.1]
       t.date :start_date
       t.date :end_date
       t.integer :team_size
-      t.string :prosition
+      t.string :position
       t.text :description
 
       t.string :project_type

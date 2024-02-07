@@ -1,0 +1,56 @@
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div class="rounded-lg bg-white lg:col-span-5 lg:p-12">
+
+        <%= form_for [:admin, :custom, @project] do |f| %>
+          <div class='mb-3'>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'w-full rounded-lg border-gray-200 p-3 text-sm form-control', placeholder: 'Title' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :start_date %>
+            <%= f.date_field :start_date, class: 'w-full rounded-lg border-gray-200 p-3 text-sm form-control' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :end_date %>
+            <%= f.date_field :end_date, class: 'w-full rounded-lg border-gray-200 p-3 text-sm form-control' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :project_type %>
+            <%= f.select :project_type, options_for_select(Project.project_types.keys.map { |type| [type.titleize, type] }, @project.project_type),
+              {},
+              { class: 'rounded-lg border-gray-200 p-3 text-sm form-control w-50' } %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :url %>
+            <%= f.text_field :url, class: 'w-full rounded-lg border-gray-200 p-3 text-sm form-control', placeholder: 'URL' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :position %>
+            <%= f.text_field :position, class: 'w-full rounded-lg border-gray-200 p-3 text-sm form-control', placeholder: 'Position' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.label :cover_image %>
+            <%= f.file_field :cover_image, class: 'rounded-lg border-gray-200 p-3 text-sm form-control w-50' %>
+          </div>
+
+
+          <div class='mb-3'>
+            <%= f.label :description %>
+            <%= f.rich_text_area :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh form-control' %>
+          </div>
+
+          <div class='mb-3'>
+            <%= f.submit 'Submit' %>
+          </div>
+
+         <% end %>
+      </div>
+    </div>
+  </div>

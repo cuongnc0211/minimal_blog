@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     namespace :custom do
       resources :posts
+      resources :projects
     end
   end
 

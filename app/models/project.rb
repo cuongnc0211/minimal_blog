@@ -6,6 +6,14 @@ class Project < ApplicationRecord
 
   enum project_type: PROJECT_TYPES.zip(PROJECT_TYPES).to_h
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "description", "end_date", "id", "id_value", "position", "project_type", "start_date", "team_size", "title", "updated_at", "url"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["cover_image_attachment", "cover_image_blob", "rich_text_description"]
+  end
+
   def cover_link
     if cover_image.attached?
       if Rails.env.production?
