@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   PROJECT_TYPES = %w[side_projects professional_projects].freeze
 
-  has_rich_text :description
+  # has_rich_text :description
   has_one_attached :cover_image
 
   enum project_type: PROJECT_TYPES.zip(PROJECT_TYPES).to_h

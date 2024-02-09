@@ -92,3 +92,5 @@ gem 'aws-sdk-s3', require: false
 gem 'friendly_id', '~> 5.4.0'
 
 gem "font-awesome-sass", "~> 6.5.1"
+
+gem 'ckeditor', github: 'galetahub/ckeditor'

@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   STATUSES = ["draft", "published", "archived"]
   AVG_WORDS_READING_PER_MIN = 238.0
 
-  has_rich_text :content
+  # has_rich_text :content
   has_one_attached :cover_image
 
   enum status: STATUSES.zip(STATUSES).to_h
@@ -19,7 +19,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   def estimated_reading_time
-    words_count = content.to_plain_text.split.size
+    words_count = ActionText::RichText.new(body: content).to_plain_text.split.size
 
     (words_count / AVG_WORDS_READING_PER_MIN.to_f).ceil
   end
