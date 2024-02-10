@@ -6,3 +6,11 @@ a {
   background-color: white;
   border-radius: 10px;
 }
+
+.post-content {
+  img {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 5px;
+  }
+}
