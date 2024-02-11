@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Rails app service
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: "postgresql://postgres:password@db:5432/minimal_blog_development"
+      REDIS_URL: "redis://redis:6379/0"
+    command: bundle exec rails s -b 0.0.0.0
+
+  # PostgreSQL service
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: minimal_blog_development
+
+  # Redis service (for Sidekiq)
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  # Sidekiq service
+  sidekiq:
+    build: .
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/app
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: "postgresql://postgres:password@db:5432/minimal_blog_development"
+      REDIS_URL: "redis://redis:6379/0"
+    command: bundle exec sidekiq
