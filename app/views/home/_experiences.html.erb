@@ -1,0 +1,21 @@
+<section class="bg-white py-10">
+  <div class="container px-5">
+    <div class="text-uppercase-expanded small mb-2">Experience</div>
+    <hr class="mt-0 mb-5" />
+
+    <% experiences.each do |experience| %>
+      <div class="row gx-5 mb-5">
+        <div class="col-lg-8">
+          <h4 class="mb-0"><%= experience.job_title %></h4>
+          <p class="lead"><%= experience.company_name %></p>
+          <p><%== experience.description %></p>
+        </div>
+        <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= experience.period %></div></div>
+      </div>
+    <% end %>
+  </div>
+  <div class="svg-border-angled text-light">
+    <!-- Angled SVG Border-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+  </div>
+</section>
