@@ -22,31 +22,20 @@
 <section class="bg-white py-10">
   <div class="container px-5">
     <div class="text-uppercase-expanded small mb-2">Experience</div>
+
     <hr class="mt-0 mb-5" />
-    <div class="row gx-5 mb-5">
-      <div class="col-lg-8">
-        <h4 class="mb-0">Senior Sales Analyst</h4>
-        <p class="lead">Intelitec Solutions</p>
-        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+
+    <% @work_epxs&.each do |work_exp| %>
+      <div class="row gx-5 mb-5">
+        <div class="col-lg-8">
+          <h4 class="mb-0"><%= work_exp.company_name %></h4>
+          <p class="lead"><%= work_exp.description %></p>
+          <p><%= work_exp.description %></p>
+        </div>
+        <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= work_exp.start_time %> - <%= work_exp.end_time %></div></div>
       </div>
-      <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small">May 2018 - Present</div></div>
-    </div>
-    <div class="row gx-5 mb-5">
-      <div class="col-lg-8">
-        <h4 class="mb-0">Marketing Analyst</h4>
-        <p class="lead">Shout Media Productions</p>
-        <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-      </div>
-      <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small">August 2015 - May 2018</div></div>
-    </div>
-    <div class="row gx-5">
-      <div class="col-lg-8">
-        <h4 class="mb-0">Sales Representative</h4>
-        <p class="lead">Gamby Enterprises</p>
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-      </div>
-      <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small">June 2011 - August 2015</div></div>
-    </div>
+    <% end %>
+    
   </div>
   <div class="svg-border-angled text-light">
     <!-- Angled SVG Border-->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_09_154611) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_28_172225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -78,15 +78,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_09_154611) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "ckeditor_assets", force: :cascade do |t|
-    t.string "data_file_name", null: false
-    t.string "data_content_type"
-    t.integer "data_file_size"
-    t.string "data_fingerprint"
-    t.string "type", limit: 30
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  create_table "experiences", force: :cascade do |t|
+    t.string "company_name"
+    t.string "job_title"
+    t.string "period"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -121,6 +119,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_09_154611) do
     t.text "description"
     t.string "project_type"
     t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "work_exps", force: :cascade do |t|
+    t.string "company_name"
+    t.string "position"
+    t.string "start_time"
+    t.string "end_time"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
