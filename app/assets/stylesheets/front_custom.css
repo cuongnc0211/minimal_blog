@@ -14,3 +14,7 @@ a {
     border-radius: 5px;
   }
 }
+
+.img-fluid {
+  width: 100%;
+}

@@ -12,10 +12,20 @@
         <li class="nav-item"><a class="nav-link" href="<%= posts_path %>">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">About Me</a></li>
       </ul>
+
+      <% if current_admin %>
+        <a class="btn fw-500 ms-lg-4" href="<%= admin_posts_path %>">
+          Admin Dashboard
+          <i class="ms-2" data - feather="arrow-right"></i>
+        </a>
+      <% end %>
+
       <a class="btn fw-500 ms-lg-4 btn-teal" href="https://shop.startbootstrap.com/sb-ui-kit-pro">
         Contact Me
         <i class="ms-2" data-feather="arrow-right"></i>
       </a>
+
+      
     </div>
   </div>
 </nav>
