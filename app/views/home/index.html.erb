@@ -19,6 +19,7 @@
   </div>
 </header>
 
+<!-- Experience section -->
 <section class="bg-white py-10">
   <div class="container px-5">
     <div class="text-uppercase-expanded small mb-2">Experience</div>
@@ -43,26 +44,24 @@
   </div>
 </section>
 
+<!-- Education section -->
 <section class="bg-light py-10">
   <div class="container px-5">
     <div class="text-uppercase-expanded small mb-2">Education</div>
     <hr class="mt-0 mb-5" />
-    <div class="row gx-5 mb-5">
-      <div class="col-lg-8">
-        <h4 class="mb-0">University of Colorado Boulder</h4>
-        <p class="lead">Master of Business Administration (MBA)</p>
-        <p>Graduated from University of Colorado Boulder's lockstep evening MBA program</p>
+
+    <% @educations.each do |education| %>
+
+      <div class="row gx-5 mb-5">
+        <div class="col-lg-8">
+          <h4 class="mb-0"><%= education.school %></h4>
+          <p class="lead"><%= "#{education.major} (#{education.degree})" %></p>
+          <p><%= education.description %></p>
+        </div>
+        <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= education.start_date %> - <%= education.graduation_date %></div></div>
       </div>
-      <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small">September 2013 - May 2015</div></div>
-    </div>
-    <div class="row gx-5">
-      <div class="col-lg-8">
-        <h4 class="mb-0">Clarcton University</h4>
-        <p class="lead">Bachelor of Science</p>
-        <p>Graduated with a degree in Marketing, with a specialization in product management and a minor in Finance</p>
-      </div>
-      <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small">August 2009 - May 2013</div></div>
-    </div>
+
+    <% end %>
   </div>
   <div class="svg-border-angled text-white">
     <!-- Angled SVG Border-->
