@@ -29,8 +29,8 @@
     <% @work_epxs&.each do |work_exp| %>
       <div class="row gx-5 mb-5">
         <div class="col-lg-8">
-          <h4 class="mb-0"><%= work_exp.company_name %></h4>
-          <p class="lead"><%= work_exp.description %></p>
+          <h4 class="mb-3"><%= work_exp.company_name %></h4>
+          <p class="lead"><%= work_exp.position %></p>
           <p><%= work_exp.description %></p>
         </div>
         <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= work_exp.start_time %> - <%= work_exp.end_time %></div></div>
