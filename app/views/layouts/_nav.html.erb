@@ -8,9 +8,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto me-lg-5">
-        <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="<%= posts_path %>">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="<%= resume_path %>">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">Portfolio</a></li>
       </ul>
 
       <% if current_admin %>
@@ -20,12 +20,10 @@
         </a>
       <% end %>
 
-      <a class="btn fw-500 ms-lg-4 btn-teal" href="https://shop.startbootstrap.com/sb-ui-kit-pro">
+      <a class="btn fw-500 ms-lg-4 btn-teal" href="<%= resume_path %>#contact-section">
         Contact Me
         <i class="ms-2" data-feather="arrow-right"></i>
       </a>
-
-      
     </div>
   </div>
 </nav>

@@ -1,0 +1,139 @@
+<div data-controller='resume'>
+  <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-60" style="background-image: url('https://source.unsplash.com/6dW3xyQvcYE/1600x1200')">
+    <div class="page-header-ui-content py-15 position-relative">
+      <div class="container px-5">
+        <div class="row gx-5">
+          <div class="col-xl-6 col-lg-8">
+            <h1 class="page-header-ui-title">Cuong Nguyen</h1>
+            <p class="page-header-ui-text mb-5"> I am a passionate web engineer, who falling in love with Ruby on Rails</p>
+            <a class="btn btn-teal btn-lg fw-500" href="#!" data-action="click->resume#download">
+              <i class="fas fa-file-pdf text-white-75 me-2"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="svg-border-angled text-white">
+      <!-- Angled SVG Border-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+    </div>
+  </header>
+
+  <div id='portfolio-content'>
+    <!-- Experience section -->
+    <section class="bg-white py-10">
+      <div class="container px-5">
+        <div class="text-uppercase-expanded small mb-2">Experience</div>
+
+        <hr class="mt-0 mb-5" />
+
+        <% @work_epxs&.each do |work_exp| %>
+          <div class="row gx-5 mb-5">
+            <div class="col-lg-8">
+              <h4 class="mb-3"><%= work_exp.company_name %></h4>
+              <p class="lead"><%= work_exp.position %></p>
+              <p><%= work_exp.description %></p>
+            </div>
+            <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= work_exp.start_time %> - <%= work_exp.end_time %></div></div>
+          </div>
+        <% end %>
+        
+      </div>
+      <div class="svg-border-angled text-light">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+      </div>
+    </section>
+
+    <!-- Education section -->
+    <section class="bg-light py-10">
+      <div class="container px-5">
+        <div class="text-uppercase-expanded small mb-2">Education</div>
+        <hr class="mt-0 mb-5" />
+
+        <% @educations.each do |education| %>
+
+          <div class="row gx-5 mb-5">
+            <div class="col-lg-8">
+              <h4 class="mb-0"><%= education.school %></h4>
+              <p class="lead"><%= "#{education.major} (#{education.degree})" %></p>
+              <p><%= education.description %></p>
+            </div>
+            <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= education.start_date %> - <%= education.graduation_date %></div></div>
+          </div>
+
+        <% end %>
+      </div>
+      <div class="svg-border-angled text-white">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+      </div>
+    </section>
+
+    <!-- Skill section -->
+    <section class="bg-white py-10">
+      <div class="container px-5">
+        <div class="text-uppercase-expanded small mb-2">Skills</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row gx-5">
+          <div class="col-lg-8">
+            <% @skills.each do |skill| %>
+              <div class='mb-3'>
+                <p><b><%= skill.name %></b></p>
+
+                <p><%= simple_format skill.content %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="svg-border-angled text-light">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+      </div>
+    </section>
+
+    <section class="bg-light py-10">
+      <div class="container px-5">
+        <div class="text-uppercase-expanded small mb-2">Interests</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row gx-5">
+          <div class="col-lg-8">
+            <p>I'm a passionae and eager to learn web engineer, I like building side projects with Rails with some other lib/frameworks</p>
+            <p>I also like writing, play sport and gardening</p>
+            <p>And this blog is the place I try to practise my writing skill</p>
+          </div>
+        </div>
+      </div>
+      <div class="svg-border-angled text-white">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+      </div>
+    </section>
+
+    <section class="bg-white py-10">
+      <div class="container px-5">
+        <div class="text-uppercase-expanded small mb-2">Contact</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row gx-5" id='contact-section'>
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <h3>Cuong Nguyen</h3>
+            <p class="lead mb-0"><%= phone_to "(+84) 355619678" %></p>
+            <a href="#!"><%= mail_to 'cuongnguyenfu@gmail.com' %></a>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-teal btn-lg fw-500" href="#!" data-action="click->resume#download">
+              <i class="fas fa-file-pdf text-white-75 me-2"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="svg-border-angled text-dark">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+      </div>
+    </section>
+  </div>
+</div>

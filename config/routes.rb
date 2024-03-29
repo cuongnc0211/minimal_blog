@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'home#index'
+  root 'posts#index'
+  get 'resume', to: 'home#resume'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
