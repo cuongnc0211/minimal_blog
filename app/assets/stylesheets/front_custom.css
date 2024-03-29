@@ -18,3 +18,9 @@ a {
 .img-fluid {
   width: 100%;
 }
+
+trix-editor {
+  &.customized-min-height {
+    min-height: 60em;
+  }
+}

@@ -43,9 +43,8 @@
 
           <div class='mb-3'>
             <%= f.label :description %>
-            <%= f.cktext_area :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh form-control' %>
-            <%= cktext_area :description, :info, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' } %>
-            <%# f.rich_text_area :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh form-control' %>
+            <%# f.cktext_area :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh form-control' %>
+            <%= f.rich_text_area :description, class: 'w-full rounded-lg border-gray-200 p-3 text-sm min-h-lvh form-control customized-min-height' %>
           </div>
 
           <div class='mb-3'>

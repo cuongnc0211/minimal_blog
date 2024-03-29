@@ -15,52 +15,19 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
   </div>
 </header>
+
+<!-- Page content -->
 <section class="bg-light py-10">
   <div class="container-fluid px-5">
     <div class="row gx-5">
-
-      <%= render partial: 'project', collection: @projects, as: :project %>
-
-      <div class="col-md-6 mb-5">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/-FVaZbu6ZAE/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">Book</div></div>
-        </a>
-      </div>
-      <div class="col-md-6 mb-5">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/FUohNQatzVs/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">Business Cards</div></div>
-        </a>
-      </div>
-      <div class="col-md-6 mb-5">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/eUCy1jb_B7I/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">Cactus Display</div></div>
-        </a>
-      </div>
-      <div class="col-md-6 mb-5">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/sRyvf4szfMc/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">Device</div></div>
-        </a>
-      </div>
-      <div class="col-md-6 mb-5 mb-lg-0">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/jipR1oTCO7U/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">White Book</div></div>
-        </a>
-      </div>
-      <div class="col-md-6">
-        <a class="card card-portfolio h-100" href="#!">
-          <img class="card-img-top" src="https://source.unsplash.com/n3sqjJzZiBM/900x600" alt="..." />
-          <div class="card-body"><div class="card-title">Photo Face</div></div>
-        </a>
+      <div class='col-12 col-md-8 offset-md-2'>
+        <%= render partial: 'project', collection: @projects, as: :project %>
       </div>
     </div>
   </div>
 </section>
-<section class="bg-white py-10">
+
+<section class="bg-white py-10 d-none">
   <div class="container px-5">
     <div class="row gx-5 justify-content-center">
       <div class="col-xl-6 col-lg-8 col-md-10 text-center py-5">
