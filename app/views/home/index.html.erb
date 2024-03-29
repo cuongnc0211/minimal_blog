@@ -69,21 +69,20 @@
   </div>
 </section>
 
+<!-- Skill section -->
 <section class="bg-white py-10">
   <div class="container px-5">
     <div class="text-uppercase-expanded small mb-2">Skills</div>
     <hr class="mt-0 mb-5" />
     <div class="row gx-5">
       <div class="col-lg-8">
-        <p>Attention to detail and a general sense of product viability are my specialties. I am motivated to provide value in a team environment, and I am committed to creating the best possible experience for customers.</p>
-        <ul class="mb-0 text-gray-700">
-          <li>Market analysis</li>
-          <li>Supply chain management</li>
-          <li>Business plan preparation</li>
-          <li>Technological entrepreneurship</li>
-          <li>Report generation</li>
-          <li>Presentation creation</li>
-        </ul>
+        <% @skills.each do |skill| %>
+          <div class='mb-3'>
+            <p><b><%= skill.name %></b></p>
+
+            <p><%= simple_format skill.content %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

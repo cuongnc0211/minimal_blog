@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_29_031940) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_29_041653) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -110,6 +110,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_031940) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "lt_caches", force: :cascade do |t|
+    t.string "key", null: false
+    t.jsonb "value", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_lt_caches_on_key"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -131,6 +139,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_031940) do
     t.text "description"
     t.string "project_type"
     t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
