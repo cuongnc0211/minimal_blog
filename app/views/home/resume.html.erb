@@ -33,7 +33,7 @@
             <div class="col-lg-8">
               <h4 class="mb-3"><%= work_exp.company_name %></h4>
               <p class="lead"><%= work_exp.position %></p>
-              <p><%= work_exp.description %></p>
+              <p><%= simple_format work_exp.description %></p>
             </div>
             <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= work_exp.start_time %> - <%= work_exp.end_time %></div></div>
           </div>
@@ -58,7 +58,7 @@
             <div class="col-lg-8">
               <h4 class="mb-0"><%= education.school %></h4>
               <p class="lead"><%= "#{education.major} (#{education.degree})" %></p>
-              <p><%= education.description %></p>
+              <p><%= simple_format education.description %></p>
             </div>
             <div class="col-lg-4 text-lg-end"><div class="text-gray-400 small"><%= education.start_date %> - <%= education.graduation_date %></div></div>
           </div>

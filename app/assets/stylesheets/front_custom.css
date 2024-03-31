@@ -24,3 +24,9 @@ trix-editor {
     min-height: 60em;
   }
 }
+
+pre {
+  background-color: #e6e8eb;
+  padding: 20px;
+  border-radius: 5px;
+}
