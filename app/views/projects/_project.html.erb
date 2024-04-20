@@ -1,6 +1,12 @@
-<div class="col-md-6 mb-5">
+<div class="mb-5 px-0 px-md-10">
   <a class="card card-portfolio h-100" href="<%= project_path(project) %>">
     <img class="card-img-top" src="<%= project.cover_link %>" alt="..." />
-    <div class="card-body"><div class="card-title"><%= project.title %></div></div>
+    <div class="card-body">
+      <div class="card-title"><%= project.title %></div>
+    </div>
   </a>
+  <div class='text-center mt-3'>
+    <h5><%= link_to project.title, project_path(project), class: '' %></h5>
+    <a href="<%= project.url %>" target='_blank'><%= project.url %></a>
+  </div>
 </div>

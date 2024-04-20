@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all.order(start_date: :desc)
+    @professional_projects = Project.professional_projects.order(start_date: :desc)
+    @side_projects = Project.side_projects.order(start_date: :desc)
   end
 
   def show

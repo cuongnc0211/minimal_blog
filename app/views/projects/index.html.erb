@@ -18,10 +18,26 @@
 
 <!-- Page content -->
 <section class="bg-light py-10">
-  <div class="container-fluid px-5">
+  <div class="container-fluid px-3 px-md-5">
     <div class="row gx-5">
       <div class='col-12 col-md-8 offset-md-2'>
-        <%= render partial: 'project', collection: @projects, as: :project %>
+        <div class='row'>
+          <div class="col-12 col-md-6 mb-5">
+            <div class='text-center mb-5'>
+              <h3>Side Projects</h3>
+            </div>
+
+            <%= render partial: 'project', collection: @side_projects, as: :project %>
+          </div>
+
+          <div class="col-12 col-md-6 mb-5">
+            <div class='text-center mb-5'>
+              <h3>Professional Projects</h3>
+            </div>
+
+            <%= render partial: 'project', collection: @professional_projects, as: :project %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
