@@ -80,6 +80,7 @@ test:
 production:
   <<: *default
   # postgresql://username:password@rds_end_point:5432/database_name
+  # Jisvyc-suwjy5-wufpij
 
   database: minimal_blog_production
   username: <%= ENV["MINIMAL_BLOG_DATABASE_USERNAME"] %>
