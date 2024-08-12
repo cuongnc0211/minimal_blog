@@ -14,8 +14,8 @@ amazon:
   service: S3
   access_key_id: <%= ENV.fetch("AWS_ACCESS_KEY") %>
   secret_access_key: <%= ENV.fetch("AWS_SECRET_KEY") %>
-  region: ap-southeast-1
-  bucket: minimal-blog
+  region: us-east-1
+  bucket: cuong-free-bucket
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
